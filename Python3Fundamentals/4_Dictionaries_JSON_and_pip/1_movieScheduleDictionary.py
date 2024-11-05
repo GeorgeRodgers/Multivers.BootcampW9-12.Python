@@ -13,6 +13,7 @@ currentMovies.update({'Frosty the Snowman': '3:00pm', # In this line the value '
                       'Christmas Vacation': '5:00pm'})
 
 # Using a loop we can now print the movies that are showing
+# By default a loop will only give the keys from a dictionary
 
 print("We're showing the following movie:")
 for key in currentMovies:
@@ -22,7 +23,7 @@ for key in currentMovies:
 
 movie = input('What movie would you like to see?\n')
 
-# To get the movie showtime we must now use the '.get()' method
+# To get the movie showtime (value) we must now use the '.get()' method passing the key as teh argument
 
 showtime = currentMovies.get(movie)
 
