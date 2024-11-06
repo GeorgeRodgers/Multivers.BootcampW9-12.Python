@@ -9,7 +9,7 @@ class Employee:
 # In order to do this we need to add the parent class in parenthesis in the class statement
 class SalaryEmployee(Employee):
     def __init__(self, fname, lname, salary):
-# We use the super function to call it from the parent class
+        # We use the super function to call it from the parent class
         super().__init__(fname, lname)
         self.salary = salary
 
@@ -21,11 +21,11 @@ class SalaryEmployee(Employee):
 class HourlyEmployees(Employee):
     def __init__(self, fname, lname, weekly_hours, hourly_rate):
         super().__init__(fname, lname)
-# New parameters
+        # New parameters
         self.weekly_hours = weekly_hours
         self.hourly_rate = hourly_rate
 
-# This class requires an alternative paycheck calculation
+    # This class requires an alternative paycheck calculation
     def calcPaycheck(self):
         return self.weekly_hours*self.hourly_rate
 
