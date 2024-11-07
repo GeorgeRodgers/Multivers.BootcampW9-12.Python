@@ -30,7 +30,13 @@ while win == False: # loop runs whilst win is false
         print(f'Please enter a {length}-letter word')
     elif lives == 1: 
         for i in user:
-            print(RED + '[' + i + ']' + RESET, end='')
+            if i in comp:
+                if comp.index(i) != user.index(i):
+                    print(YELLOW + '[' + i + ']' + RESET, end='')
+                else:       
+                    print(GREEN + '[' + i + ']' + RESET, end='')
+            else:
+                print(RED + '[' + i + ']' + RESET, end='')
         print('')
         print(f'\nThe word was {comp}.')
         print(RED + '\nGAME OVER\n' + RESET)
