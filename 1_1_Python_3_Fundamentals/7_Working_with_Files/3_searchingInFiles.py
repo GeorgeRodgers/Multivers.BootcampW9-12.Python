@@ -6,7 +6,7 @@
 find = input('What acronym would you like to look up?\n')
 
 found = False # Global variable to check if found
-with open('acronyms.txt') as file:
+with open('1_1_Python_3_Fundamentals/7_Working_with_Files/acronyms.txt') as file:
     for line in file: # Search each line of the file
         if find in line: # Check if acronym is included in the line
             print(line) # Print line
