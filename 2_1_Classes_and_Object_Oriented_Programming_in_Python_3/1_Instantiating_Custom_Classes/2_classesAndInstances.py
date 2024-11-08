@@ -13,3 +13,5 @@ print(e.name) # Prints the attribute parameter
 print(e.age)
 print(e.position)
 print(e.salary)
+
+print(e.__class__) # we can use '.__class__' to get the class of an object
