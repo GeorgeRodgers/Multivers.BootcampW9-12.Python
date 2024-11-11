@@ -18,4 +18,4 @@ class Employee:
     def get_salary(self):
         return f'£{format(self.salary, '.2f')}'
 
-george = Employee('George Rodgers', 29, 'Aspiring Developer', 25000)
+george = Employee('George Rodgers', 29, 'Aspiring Developer', 2000)
