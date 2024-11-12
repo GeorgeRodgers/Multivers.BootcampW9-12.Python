@@ -1,6 +1,6 @@
 import unittest
 
-from .phonebook import Phonebook
+from phonebook import Phonebook
 
 class PhonebookTest(unittest.TestCase):
     
@@ -17,8 +17,8 @@ class PhonebookTest(unittest.TestCase):
         number = self.phonebook.lookup('Bob')
         self.assertEqual(number, '12345')
         self.assertRaises
-
-def test_missing_name(self):
-    # phonebook = Phonebook()
-    with self.assertRaises(KeyError):
-        self.phonebook.lookup('missing')
+        
+    def test_missing_name(self):
+        # phonebook = Phonebook()
+        with self.assertRaises(KeyError):
+            self.phonebook.lookup('missing')
