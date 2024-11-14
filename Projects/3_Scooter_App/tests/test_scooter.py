@@ -1,14 +1,16 @@
 import pytest
 
-from src.scooter import Scooter
+from scooter import Scooter
+from user import User
 
-scooter1 = Scooter('Stockport')
-scooter2 = Scooter('Manchester')
-scooter3 = Scooter('Salford')
+scooter1 = Scooter('Station A')
+scooter2 = Scooter('Station B')
+scooter3 = Scooter('Station C')
+user = User('test_user', 'test_password', 18)
 
 # Test if the scooter station is set to provided value when an instance of the scooter is created
 def test_new_scooter_station():
-    assert scooter1.station == 'Stockport'
+    assert scooter1.station == 'Station A'
 # Test if the scooter user is set to null hen an instance of the scooter is created
 def test_new_scooter_user():
     assert scooter1.user == None
@@ -26,7 +28,7 @@ def test_serial_sequentially_updates():
 
 # Test '.rent(user)' method updates the scooters user and station, throws an error if the charge is below 20% or the scooter is broken
 def test_scooter_can_be_rented():
-    scooter1.rent('test_user')
+    scooter1.rent(user)
     assert scooter1.user == 'test_user'
     assert scooter1.station == None
 
@@ -77,3 +79,5 @@ def test_recharge_charges_the_scooter_and_logs_progress(capsys):
     captured = capsys.readouterr() # This code captures code logged to the console
     assert captured.out == 'Scooter repair progress: |||||||||||||||||||||||||\nScooter repaired\n'
     assert scooter1.is_broken == False
+
+Scooter.next_serial = 1 # reset serial number to 1 for test_scooter_app.py

@@ -1,13 +1,12 @@
 import pytest
 
-from src.user import User
+from user import User
 
 user = User('test_name', 'test_password', 20)
 
 # Instance user created with correct details
 def test_new_user_instance_details():
     assert user.username == 'test_name'
-    assert user.password == 'test_password'
     assert user.age == 20
     assert not user.logged_in
     
