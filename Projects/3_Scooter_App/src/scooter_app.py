@@ -12,18 +12,18 @@ class Scooter_App:
         self.registered_users = {}
     
     def __repr__(self):
-        repr = f'\n{'*'*80}\n{'*'*80}\n{'*'*80}\n\nStations:'
+        repr = f'\n{'* '*40}\n{' *'*39}\n{'* '*40}\n\nStations:'
         for station in self.stations:
             repr += f'\n\n  {station}\n'
             for scooter in self.stations.get(station):
                 repr += f'\n    {scooter}'
-        repr += f'\n\n{'*'*80}\n{'*'*80}\n\nRented Scooter:\n'
+        repr += f'\n\n{'* '*40}\n{' *'*39}\n\nRented Scooter:\n'
         for scooter in self.rented_scooters:
             repr += f'\n    {scooter}'
-        repr += f'\n\n{'*'*80}\n{'*'*80}\n\nRegistered Users:\n'
+        repr += f'\n\n{'* '*40}\n{' *'*39}\n\nRegistered Users:\n'
         for username in self.registered_users:
             repr += f'{self.registered_users.get(username)}\n'
-        repr += f'\n{'*'*80}\n{'*'*80}'
+        repr += f'\n{'* '*40}\n{' *'*39}'
         return repr
         # return f'\nStations:\n{self.stations}\n\nRented Scooters:\n{self.rented_scooters}\n\nRegistered User:\n{self.registered_users}'
     
@@ -112,7 +112,7 @@ if __name__ == '__main__':
         scooter_app.create_scooter('Station B')
     for i in range(2):
         scooter_app.create_scooter('Station C')
-    scooter_app.rent_scooter(6, 'user1')
+    scooter_app.rent_scooter(5, 'user1')
     scooter_app.rent_scooter(4, 'user2')
     scooter_app.dock_scooter('user1', 'Station A')
     print(scooter_app)
